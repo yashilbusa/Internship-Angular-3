@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-account-detail',
@@ -12,8 +12,7 @@ export class AccountDetailComponent {
   id: any 
 
   constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe((p) => {
-        this.id = p['id'];
-    });
+
+    this.id = route.snapshot.paramMap.get('id')
 }
 }
