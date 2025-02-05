@@ -12,7 +12,6 @@ export class AccountDetailComponent {
   id: any 
 
   constructor(private route: ActivatedRoute) {
-
     this.id = route.snapshot.paramMap.get('id')
 }
 }
