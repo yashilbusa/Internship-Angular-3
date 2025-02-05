@@ -1,0 +1,14 @@
+<div>
+    @for (i of accounts; track $index) {
+    <div [routerLink]="['/account', i.id]">
+        <p>{{i.name}}</p>
+    </div>
+    }
+</div>
+
+<!-- <br>
+<a routerLink="/account:1">Account 1</a>
+<br>
+<a routerLink="/account:2">Account 2</a>
+<br>
+<a routerLink="/account:3">Account 3</a> -->
