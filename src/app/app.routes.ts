@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: 'home', title:'Home', component: HomeComponent },
     { path: 'about',title:'About', component: AboutComponent },
     { path: 'contact', title:'Contact', component: ContactComponent },
-    { path: 'account', title:'Account', component: AccountComponent },
+    { path: 'account', title:'Account', loadComponent: () => import('./account/account.component').then((c) => c.AccountComponent)},
     { path: 'account/:id', component: AccountDetailComponent },
     { path: '', redirectTo:'home', pathMatch:'full'},
     { path: '**', title:'Page Not Found', component: PageNotFoundComponent }
