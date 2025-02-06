@@ -1,26 +1,33 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './reactive-form.component.html',
   styleUrl: './reactive-form.component.css'
 })
 
 export class ReactiveFormComponent {
 
-  regForm:FormGroup | any;
+  regForm!: FormGroup;
   constructor() { }
 
-  ngOnDestroy() {
+  ngOnInit() {
+
     this.regForm = new FormGroup({
-      id:new FormControl(),
       fullname:new FormControl(),
       emailadd:new FormControl(),
-      phoneno:new FormControl()
-    })
-    
+      phoneno:new FormControl(),
+      yourcity:new FormControl()
+    });
   }
+
+  register(){
+    console.log(this.regForm.value);
+    this.regForm.reset();
+  }
+
 }

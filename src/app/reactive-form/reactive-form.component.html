@@ -1,7 +1,7 @@
 <h2>Reactive Form</h2>
 
 <div>
-    <form>
+    <form [formGroup]="regForm" (ngSubmit)="register()">
 
         <div>
             <label for="text">Name : </label>
@@ -18,6 +18,20 @@
         <div>
             <label for="tel">Phone : </label>
             <input type="tel" placeholder="Enter Your Number" formControlName="phoneno">
+        </div>
+
+        <br>
+        <div>
+            <label for="city">City : </label>
+            <select name="city" required formControlName="yourcity">
+                <option value=""disabled>Select your city</option>
+                <option value="Jamnagar">Jamnagar</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Morbi">Morbi</option>
+                <option value="Dwarka">Dwarka</option>
+            </select>
         </div>
 
         <br>
