@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -13,16 +13,25 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class ReactiveFormComponent {
 
   regForm!: FormGroup;
-  constructor() { }
+  
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
 
-    this.regForm = new FormGroup({
-      fullname:new FormControl(),
-      emailadd:new FormControl(),
-      phoneno:new FormControl(),
-      yourcity:new FormControl()
+    // this.regForm = new FormGroup({
+    //   fullname:new FormControl('Yashil Busa'),
+    //   email:new FormControl('yashilpatel1914@gmail.com'),
+    //   phoneno:new FormControl('9726535839'),
+    //   city:new FormControl('Jamnagar')
+    // });
+
+    this.regForm = this.fb.group({
+      Name:['Yashil Busa'],
+      Email:['yashilpatel1914@gmail.com'],
+      PhoneNo:[9726535839],
+      City:['Jamnagar']
     });
+
   }
 
   register(){
