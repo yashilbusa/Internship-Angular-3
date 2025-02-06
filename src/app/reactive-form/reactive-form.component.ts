@@ -26,9 +26,9 @@ export class ReactiveFormComponent {
     // });
 
     this.regForm = this.fb.group({
-      Name:['Yashil Busa',Validators.compose([Validators.required,Validators.minLength(3),Validators.maxLength(15)])],
-      Email:['yashilpatel1914@gmail.com',Validators.compose([Validators.required,Validators.email])],
-      PhoneNo:['9726535839',Validators.compose([Validators.required,Validators.minLength(10),Validators.maxLength(10)])],
+      Name:['',[Validators.required, Validators.minLength(3), Validators.maxLength(12)]],
+      Email:['yashilpatel1914@gmail.com',[Validators.required, Validators.email]],
+      PhoneNo:['9726535839',[Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       City:['Jamnagar',Validators.required]
     });
   }
