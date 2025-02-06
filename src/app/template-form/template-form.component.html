@@ -38,11 +38,7 @@
             <label for="tel">Phone : </label>
             <input type="tel" placeholder="Enter Your Number" name="phone"
              required minlength="10" maxlength="10" ngModel #phone="ngModel">
-
-            <!-- <span *ngIf="phone.touched && !phone.valid">
-                Phone Number is Required !!!
-            </span> -->
-
+             
             <span *ngIf="phone.errors?.['minlength']">
                 Phone Number Length must be 10.
             </span>
