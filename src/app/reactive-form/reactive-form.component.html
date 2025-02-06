@@ -48,7 +48,7 @@
             <span *ngIf="regForm.controls['PhoneNo'].touched && !regForm.controls['PhoneNo'].valid">
                 
                 <span *ngIf="regForm.controls['PhoneNo'].hasError('required')">
-                    Name is Required !!!
+                    Phone Number is Required !!!
                 </span>  
 
                 <span *ngIf="regForm.controls['PhoneNo'].hasError('minLength')">
@@ -83,7 +83,6 @@
         <div>
             <button type="submit" [disabled]="!regForm.valid">Submit</button>
         </div>
-
 
     </form>
 </div>
