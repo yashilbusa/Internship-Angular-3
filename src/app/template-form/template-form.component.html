@@ -11,16 +11,25 @@
             <span *ngIf="name.touched && !name.valid">
                 Name is Required !!!
             </span>
+
+            <span *ngIf="name.errors?.['minlength']">
+                Name must be at least 3 characters long.
+            </span>
         </div>
 
         <br>
         <div>
             <label for="email">Email : </label>
             <input type="email" placeholder="Enter Your Email" name="email"
-             required ngModel #email="ngModel">
+             required ngModel pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+             #email="ngModel">
 
             <span *ngIf="email.touched  && !email.valid">
                 Email is Required !!!
+            </span>
+
+            <span *ngIf="email.errors?.['pattern']">
+                Email is invalid
             </span>
         </div>
 
@@ -30,9 +39,31 @@
             <input type="tel" placeholder="Enter Your Number" name="phone"
              required minlength="10" maxlength="10" ngModel #phone="ngModel">
 
-            <span *ngIf="phone.touched && !phone.valid">
+            <!-- <span *ngIf="phone.touched && !phone.valid">
                 Phone Number is Required !!!
+            </span> -->
+
+            <span *ngIf="phone.errors?.['minlength']">
+                Phone Number Length must be 10.
             </span>
+        </div>
+
+        <br>
+        <div>
+            <label for="city">City : </label>
+            <select name="city" required ngModel #city="ngModel">
+                <option value=""disabled>Select your city</option>
+                <option value="Jamnagar">Jamnagar</option>
+                <option value="Rajkot">Rajkot</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Surat">Surat</option>
+                <option value="Morbi">Morbi</option>
+                <option value="Dwarka">Dwarka</option>
+            </select>
+
+            <div *ngIf="!city.valid && city.touched">
+                City is required.
+            </div>
         </div>
         
         <br>

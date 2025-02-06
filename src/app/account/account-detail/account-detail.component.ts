@@ -13,5 +13,5 @@ export class AccountDetailComponent {
 
   constructor(private route: ActivatedRoute) {
     this.id = route.snapshot.paramMap.get('id')
-}
+  }
 }
