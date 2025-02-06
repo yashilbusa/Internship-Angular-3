@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { TemplateFormComponent } from "./template-form/template-form.component";
 // import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink,RouterOutlet],
+  imports: [RouterLink, RouterOutlet, TemplateFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular-day-3';
+
 }

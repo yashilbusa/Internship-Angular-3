@@ -7,11 +7,11 @@ import { AccountComponent } from './account/account.component';
 import { AccountDetailComponent } from './account/account-detail/account-detail.component';
 
 export const routes: Routes = [
-    { path: 'home', title:'Home', component: HomeComponent },
+    { path: '', title:'Home', component: HomeComponent },
     { path: 'about',title:'About', component: AboutComponent },
     { path: 'contact', title:'Contact', component: ContactComponent },
     { path: 'account', title:'Account', loadComponent: () => import('./account/account.component').then((c) => c.AccountComponent)},
     { path: 'account/:id', component: AccountDetailComponent },
-    { path: '', redirectTo:'home', pathMatch:'full'},
+    // { path: '', redirectTo:'home', pathMatch:'full'},
     { path: '**', title:'Page Not Found', component: PageNotFoundComponent }
 ];
