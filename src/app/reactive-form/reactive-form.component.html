@@ -7,17 +7,17 @@
             <label for="text">Name : </label>
             <input type="text" placeholder="Enter Your Name" formControlName="Name">
 
-            <span *ngIf="regForm.controls['Name'].dirty && !regForm.controls['Name'].valid">
+            <span *ngIf="regForm.controls['Name'].touched && !regForm.controls['Name'].valid">
                 
                 <span *ngIf="regForm.controls['Name'].hasError('required')">
                     Name is Required !!!
                 </span>   
 
-                <span *ngIf="regForm.controls['Name'].hasError('minLength')">
+                <span *ngIf="regForm.controls['Name'].hasError('minlength')">
                     Name must be at least 3 characters long.
                 </span>   
 
-                <span *ngIf="regForm.controls['Name'].hasError('maxLength')">
+                <span *ngIf="regForm.controls['Name'].hasError('maxlength')">
                     Name must be less than 15 characters.
                 </span>  
                 
@@ -48,14 +48,14 @@
             <span *ngIf="regForm.controls['PhoneNo'].touched && !regForm.controls['PhoneNo'].valid">
                 
                 <span *ngIf="regForm.controls['PhoneNo'].hasError('required')">
-                    Phone Number is Required !!!
+                    Name is Required !!!
                 </span>  
 
-                <span *ngIf="regForm.controls['PhoneNo'].hasError('minLength')">
+                <span *ngIf="regForm.controls['PhoneNo'].hasError('minlength')">
                     Phone Number Length Must be 10.
                 </span>   
 
-                <span *ngIf="regForm.controls['PhoneNo'].hasError('maxLength')">
+                <span *ngIf="regForm.controls['PhoneNo'].hasError('maxlength')">
                     Phone Number Length Must be 10.
                 </span>  
                 
