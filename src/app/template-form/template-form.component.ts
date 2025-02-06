@@ -12,6 +12,7 @@ export class TemplateFormComponent {
 
   save(form:any){
     console.log(form.value);
+    form.reset();
   }
 
 }
