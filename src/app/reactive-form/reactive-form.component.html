@@ -6,18 +6,60 @@
         <div>
             <label for="text">Name : </label>
             <input type="text" placeholder="Enter Your Name" formControlName="Name">
+
+            <span *ngIf="regForm.controls['Name'].touched && !regForm.controls['Name'].valid">
+                
+                <span *ngIf="regForm.controls['Name'].hasError('required')">
+                    Name is Required !!!
+                </span>   
+
+                <span *ngIf="regForm.controls['Name'].hasError('minLength')">
+                    Name must be at least 3 characters long.
+                </span>   
+
+                <span *ngIf="regForm.controls['Name'].hasError('maxLength')">
+                    Name must be less than 15 characters.
+                </span>  
+                
+            </span>
         </div>
 
         <br>
         <div>
             <label for="email">Email : </label>
             <input type="email" placeholder="Enter Your Email" formControlName="Email">
+            <span *ngIf="regForm.controls['Email'].touched && !regForm.controls['Email'].valid">
+                
+                <span *ngIf="regForm.controls['Email'].hasError('required')">
+                    Email is Required !!!
+                </span>   
+
+                <span *ngIf="regForm.controls['Email'].hasError('email')">
+                    Email is Invalid !!!
+                </span>  
+                
+            </span>
         </div>
 
         <br>
         <div>
             <label for="tel">Phone : </label>
             <input type="tel" placeholder="Enter Your Number" formControlName="PhoneNo">
+            <span *ngIf="regForm.controls['PhoneNo'].touched && !regForm.controls['PhoneNo'].valid">
+                
+                <span *ngIf="regForm.controls['PhoneNo'].hasError('required')">
+                    Name is Required !!!
+                </span>  
+
+                <span *ngIf="regForm.controls['PhoneNo'].hasError('minLength')">
+                    Phone Number Length Must be 10.
+                </span>   
+
+                <span *ngIf="regForm.controls['PhoneNo'].hasError('maxLength')">
+                    Phone Number Length Must be 10.
+                </span>  
+                
+            </span>
         </div>
 
         <br>
@@ -32,11 +74,14 @@
                 <option value="Morbi">Morbi</option>
                 <option value="Dwarka">Dwarka</option>
             </select>
+            <span *ngIf="regForm.controls['City'].touched && !regForm.controls['City'].valid">
+                City is Required !!!
+            </span>
         </div>
 
         <br>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" [disabled]="!regForm.valid">Submit</button>
         </div>
 
 

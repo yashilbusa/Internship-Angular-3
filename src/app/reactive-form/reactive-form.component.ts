@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -26,12 +26,11 @@ export class ReactiveFormComponent {
     // });
 
     this.regForm = this.fb.group({
-      Name:['Yashil Busa'],
-      Email:['yashilpatel1914@gmail.com'],
-      PhoneNo:[9726535839],
-      City:['Jamnagar']
+      Name:['Yashil Busa',[Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
+      Email:['yashilpatel1914@gmail.com',[Validators.required,Validators.email]],
+      PhoneNo:['9726535839',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
+      City:['Jamnagar',Validators.required]
     });
-
   }
 
   register(){
