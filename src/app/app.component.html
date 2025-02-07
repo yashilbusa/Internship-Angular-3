@@ -1,17 +1,47 @@
 <h2>Angular Router App</h2>
-<div>
+<!-- <div>
     <a routerLink="/">Home | </a>
     <a routerLink="/about">About | </a>
     <a routerLink="/contact">Contact |</a>
-    <a routerLink="/account">Accounts</a>
-</div>
+    <a routerLink="/account">Accounts |</a>
+    <a routerLink="/tdf">Template Driven Form |</a>
+    <a routerLink="/rf">Reactive Form |</a>
+    <a routerLink="/signal">Signal</a>
+</div> -->
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/about">About</a>
+          <a class="nav-link" routerLink="/contact">Contact</a>
+          <a class="nav-link" routerLink="/account">Account</a>
+          <a class="nav-link" routerLink="/tdf">Template Driven Form</a>
+          <a class="nav-link" routerLink="/rf">Reactive Form</a>
+          <a class="nav-link" routerLink="/signal">Signal</a>
+        </div>
+      </div>
+    </div>
+</nav>
+
 <router-outlet></router-outlet>
 
-<hr>
+
+
+
+
+<!-- <hr>
 <app-template-form></app-template-form>
 
 <hr>
 <app-reactive-form></app-reactive-form>
 
 <hr>
-<app-signal></app-signal>
+<app-signal></app-signal> -->
