@@ -9,6 +9,8 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SignalComponent } from './signal/signal.component';
 import { ServiceAComponentComponent } from './service-a-component/service-a-component.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
     { path: '', title:'Home', component: HomeComponent },
@@ -19,6 +21,8 @@ export const routes: Routes = [
     { path: 'rf', title:'Reactive Form', component: ReactiveFormComponent },
     { path: 'signal', component: SignalComponent },
     { path: 'sc', component: ServiceAComponentComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
     { path: 'account/:id', component: AccountDetailComponent },
 
     // { path: '', redirectTo:'home', pathMatch:'full'},
