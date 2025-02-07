@@ -1,1 +1,46 @@
-<p>login works!</p>
+<hr>
+<br>
+
+<div class="login-form">
+  <h3>Login</h3>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+      
+      <div class="mb-3">
+          <label for="email" class="form-label" >Email address</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="Email">
+          <span *ngIf="loginForm.controls['Email'].touched && !loginForm.controls['Email'].valid">
+                
+            <span *ngIf="loginForm.controls['Email'].hasError('required')">
+                Email is Required !!!
+            </span>   
+
+            <span *ngIf="loginForm.controls['Email'].hasError('email')">
+                Email is Invalid !!!
+            </span>  
+            
+        </span>
+      </div>
+
+      <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="PassWord">
+          <span *ngIf="loginForm.controls['PassWord'].touched && !loginForm.controls['PassWord'].valid">
+              
+            <span *ngIf="loginForm.controls['PassWord'].hasError('required')">
+              Password is Required !!!
+            </span>   
+
+            <span *ngIf="loginForm.controls['PassWord'].hasError('minlength')">
+              Password Length at least 8.
+            </span>  
+            
+        </span>
+      </div>
+
+      <button type="submit" class="btn btn-custom w-100" [disabled]="!loginForm.valid">Login</button>
+  </form>
+
+  <div class="signup-link">
+      <p>New User? <a routerLink="/signup" class="text-primary">Sign up here</a></p>
+  </div>
+</div>

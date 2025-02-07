@@ -1,1 +1,53 @@
-<p>signup works!</p>
+<hr>
+<br>
+
+<div class="signup-form">
+  <h3>Signup</h3>
+  <form [formGroup]="signupForm" (ngSubmit)="register()">
+      
+      <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="Email">
+          <span *ngIf="signupForm.controls['Email'].touched && !signupForm.controls['Email'].valid">
+            <span *ngIf="signupForm.controls['Email'].hasError('required')">
+                Email is Required !!!
+            </span>   
+            <span *ngIf="signupForm.controls['Email'].hasError('email')">
+                Email is Invalid !!!
+            </span>  
+          </span>
+      </div>
+
+      <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" formControlName="PassWord">
+          <span *ngIf="signupForm.controls['PassWord'].touched && !signupForm.controls['PassWord'].valid">
+            <span *ngIf="signupForm.controls['PassWord'].hasError('required')">
+              Password is Required !!!
+            </span>   
+            <span *ngIf="signupForm.controls['PassWord'].hasError('minlength')">
+              Password Length must be at least 8 characters.
+            </span>  
+          </span>
+      </div>
+
+      <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="ConfirmPassWord">
+          <span *ngIf="signupForm.controls['ConfirmPassWord'].touched && !signupForm.controls['ConfirmPassWord'].valid">
+            <span *ngIf="signupForm.controls['ConfirmPassWord'].hasError('required')">
+              Confirm Password is Required !!!
+            </span>
+            <span *ngIf="signupForm.controls['ConfirmPassWord'].hasError('passwordMismatch')">
+              Passwords do not match !!!
+            </span>
+          </span>
+      </div>
+
+      <button type="submit" class="btn btn-custom w-100" [disabled]="!signupForm.valid">Signup</button>
+  </form>
+
+  <div class="signup-link">
+      <p>Already have an account? <a routerLink="/login" class="text-primary">Login here</a></p>
+  </div>
+</div>
