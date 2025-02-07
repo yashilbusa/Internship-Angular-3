@@ -26,6 +26,7 @@ export class SignupComponent {
   register(){
     if (this.signupForm.valid) {
       console.log('Signup Successful', this.signupForm.value);
+      this.signupForm.reset();
     }
   }
 }
