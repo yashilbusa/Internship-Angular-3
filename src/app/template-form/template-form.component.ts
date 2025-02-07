@@ -17,5 +17,4 @@ export class TemplateFormComponent {
     }
     form.reset();
   }
-
 }
