@@ -23,7 +23,8 @@ export class SignalComponent {
   });
 
   increase(){
-    this.counter.update(c => c + 1)
+    // this.counter.update(c => c + 1)
+    this.counter.set(this.counter() + 1)
   }
 
   reset(){
