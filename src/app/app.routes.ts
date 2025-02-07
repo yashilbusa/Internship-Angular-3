@@ -8,6 +8,7 @@ import { AccountDetailComponent } from './account/account-detail/account-detail.
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { SignalComponent } from './signal/signal.component';
+import { ServiceComponenetComponent } from './service-componenet/service-componenet.component';
 
 export const routes: Routes = [
     { path: '', title:'Home', component: HomeComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
     { path: 'tdf', title:'Template Driven Form', component: TemplateFormComponent },
     { path: 'rf', title:'Reactive Form', component: ReactiveFormComponent },
     { path: 'signal', component: SignalComponent },
+    { path: 'sc', component: ServiceComponenetComponent },
     { path: 'account/:id', component: AccountDetailComponent },
 
     // { path: '', redirectTo:'home', pathMatch:'full'},
