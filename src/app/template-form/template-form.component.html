@@ -57,6 +57,27 @@
                 <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
             </select>
 
+            @switch (city.value) {
+                @case ("Jamnagar"){
+                    <div>You Select {{city.value}}</div>
+                }
+                @case ("Rajkot"){
+                    <div>You Select {{city.value}}</div>
+                }
+                @case ("Ahmedabad"){
+                    <div>You Select {{city.value}}</div>
+                }
+                @case ("Surat"){
+                    <div>You Select {{city.value}}</div>
+                }
+                @case ("Morbi"){
+                    <div>You Select {{city.value}}</div>
+                }
+                @case ("Dwarka"){
+                    <div>You Select {{city.value}}</div>
+                }
+            }
+
             <div *ngIf="!city.valid && city.touched">
                 City is required.
             </div>
