@@ -68,12 +68,7 @@
             <label for="city">City : </label>
             <select name="city" required formControlName="City">
                 <option value=""disabled>Select your city</option>
-                <option value="Jamnagar">Jamnagar</option>
-                <option value="Rajkot">Rajkot</option>
-                <option value="Ahmedabad">Ahmedabad</option>
-                <option value="Surat">Surat</option>
-                <option value="Morbi">Morbi</option>
-                <option value="Dwarka">Dwarka</option>
+                <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
             </select>
             <span *ngIf="regForm.controls['City'].touched && !regForm.controls['City'].valid">
                 City is Required !!!

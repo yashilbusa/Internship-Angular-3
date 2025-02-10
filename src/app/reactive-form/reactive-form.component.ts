@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 export class ReactiveFormComponent {
 
+  cities = ['Jamnagar', 'Rajkot', 'Ahmedabad', 'Surat', 'Morbi', 'Dwarka'];
   regForm!: FormGroup;
   
   constructor(private fb:FormBuilder) { }
@@ -24,6 +25,7 @@ export class ReactiveFormComponent {
     //   phoneno:new FormControl('9726535839'),
     //   city:new FormControl('Jamnagar')
     // });
+
 
     this.regForm = this.fb.group({
       Name:['Yashil Busa',[Validators.required, Validators.minLength(3), Validators.maxLength(15)]],

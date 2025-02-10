@@ -11,6 +11,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class TemplateFormComponent {
 
+  cities = ['Jamnagar', 'Rajkot', 'Ahmedabad', 'Surat', 'Morbi', 'Dwarka'];
+  
   save(form:any){
     if(form.valid){
       console.log(form.value);
