@@ -38,6 +38,9 @@
             <span *ngIf="signupForm.controls['ConfirmPassWord'].hasError('required')">
               Confirm Password is Required !!!
             </span>
+            <span *ngIf="signupForm.controls['ConfirmPassWord'].hasError('minlength')">
+              Password Length must be at least 8 characters.
+            </span>  
           </span>
       </div>
 

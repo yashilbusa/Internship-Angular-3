@@ -19,7 +19,7 @@ export class SignupComponent {
     this.signupForm = this.fb.group({
       Email: ['', [Validators.required, Validators.email]],
       PassWord: ['', [Validators.required, Validators.minLength(8)]],
-      ConfirmPassWord: ['', [Validators.required]]
+      ConfirmPassWord: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 

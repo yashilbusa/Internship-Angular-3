@@ -67,7 +67,7 @@
         <div>
             <label for="city">City : </label>
             <select name="city" required formControlName="City">
-                <option value=""disabled>Select your city</option>
+                <option value="" disabled>Select your city</option>
                 <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
             </select>
             <span *ngIf="regForm.controls['City'].touched && !regForm.controls['City'].valid">
