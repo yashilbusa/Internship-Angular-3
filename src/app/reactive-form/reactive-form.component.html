@@ -70,10 +70,20 @@
                 <option value="" disabled>Select your city</option>
                 <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
             </select>
-            
-            <span *ngIf="regForm.controls['City'].touched && !regForm.controls['City'].valid">
+
+            <div [ngSwitch]="regForm.controls['City'].value">
+                <div *ngSwitchCase="'Jamnagar'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchCase="'Rajkot'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchCase="'Ahmedabad'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchCase="'Surat'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchCase="'Morbi'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchCase="'Dwarka'">You Selected {{ regForm.controls['City'].value }}</div>
+                <div *ngSwitchDefault>Select a valid city</div>
+            </div>
+
+            <!-- <span *ngIf="regForm.controls['City'].touched && !regForm.controls['City'].valid">
                 City is Required !!!
-            </span>
+            </span> -->
         </div>
 
         <br>

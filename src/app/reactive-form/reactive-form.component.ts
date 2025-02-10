@@ -11,9 +11,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 
 export class ReactiveFormComponent {
+[x: string]: any;
 
   cities = ['Jamnagar', 'Rajkot', 'Ahmedabad', 'Surat', 'Morbi', 'Dwarka'];
   regForm!: FormGroup;
+  
   
   constructor(private fb:FormBuilder) { }
 
@@ -31,7 +33,7 @@ export class ReactiveFormComponent {
       Name:['Yashil Busa',[Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
       Email:['yashilpatel1914@gmail.com',[Validators.required, Validators.email]],
       PhoneNo:['9726535839',[Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      City:['Jamnagar',Validators.required]
+      City:['',Validators.required]
     });
   }
 
