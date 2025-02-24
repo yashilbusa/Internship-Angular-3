@@ -39,7 +39,7 @@ export class ReactiveFormComponent {
 
   register(){
     console.log(this.regForm.value);
-    console.log(this.regForm.get('Name')?.value);
+    // console.log(this.regForm.get('Name')?.value);
     this.regForm.reset();
   }
 
